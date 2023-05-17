@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Norse Bold';
+    src: url('fonts/Norse-Bold.otf') format('opentype');
+}
+html {
+    font-size: calc(50vh + 50vw);
+}
+html, body, main {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+main > div:first-child {
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    width: 35%;
+    height: 100%;
+}
+.banner {
+    width: 100%;
+    height: 20%;
+    top: 20%;
+    position: relative;
+    background-color: rgba(103, 103, 103, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img {
+    position: relative;
+    object-fit: cover;
+    height: 15vmin;
+}
+h1 {
+    font-family: 'Norse Bold';
+    font-size: 12vmin;
+    margin: 0;
+    color: white;
+}
