@@ -63,3 +63,18 @@ h1 {
 .upper_text_white {
     background-color: #f9fafb;
 }
+.upper_text_white > p {
+    font-size: 23px;
+    font-weight: 700;
+}
+.upper_text_white > p:first-child {
+    margin: 100px 40px 40px 40px;
+}
+.upper_text_white > p:last-child {
+    margin: 0 40px 50px 40px;
+}
+form > div {
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+    grid-template-rows: repeat(3, 0fr);
+}
