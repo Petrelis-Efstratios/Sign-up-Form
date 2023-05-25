@@ -65,7 +65,7 @@ h1 {
     background-color: #f9fafb;
 }
 .upper_text > p {
-    font-size: calc(1.5vh + 1.5vw);
+    font-size: calc(1.2vh + 1.2vw);
     font-weight: 700;
 }
 .upper_text > p:first-child {
@@ -79,19 +79,55 @@ form > div {
     grid-template-columns: repeat(2, 0fr);
     grid-template-rows: repeat(3, 0fr);
 }
+legend {
+    font-size: calc(1.4vh + 1.4vw);
+    margin: 3vh 0 1vh 4vw;
+    width: 65%;
+}
+label {
+    font-size: 2.2vh;
+    padding-left: 0.3vw;
+}
 input {
     appearance: none;
-    width: 200px;
-    height: 25px;
+    width: 17vw;
+    height: 3vh;
     border: 2px solid #E5E7EB;
-    border-radius: 8px;
+    border-radius: 1.5vh;
     outline: 0;
-    padding: 2px 4px;
-    font-size: 16px;
+    padding: 0.7vh 0.8vw;
+    font-size: 3vh;
 }
 input:focus {
     border: 2px solid black;
 }
 .left_column {
-    padding: 18px 40px;
+    padding: 1.5vh 4vw;
+}
+.right_column {
+    padding: 1.5vh 0;
+}
+.form_container {
+    box-shadow: 0 4vh 4vw -6vh grey
+}
+button {
+    appearance: none;
+    width: 20vw;
+    height: 8vh;
+    border-radius: 1.5vh;
+    background-color: #596d48;
+    border: none;
+    box-shadow: 0 2vh 2vw -2vh grey;
+    font-size: calc(1.2vh + 1.2vw);
+    color: white;
+    margin: 3vh 0 0 4vw;
+}
+.form_container + div > p {
+    font-size: 2.7vh;
+    margin: 3vh 0 0 4vw;
+    font-weight: 500;
+}
+.form_container + div > p > a {
+    color: #596d48;
+    font-weight: 500;
 }
