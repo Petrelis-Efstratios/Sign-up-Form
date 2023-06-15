@@ -102,6 +102,7 @@ input {
     height: 3vh;
     min-width: 150px;
     min-height: 17px;
+    max-width: 600px;
     border: 0.3vh solid #E5E7EB;
     border-radius: 1.5vh;
     outline: 0;
@@ -110,6 +111,7 @@ input {
 }
 input:focus {
     border: 2px solid black;
+    box-shadow: 0 0 2vh grey;
 }
 .left_column {
     padding: 1.5vh 4vw;
@@ -118,7 +120,7 @@ input:focus {
     padding: 1.5vh 0;
 }
 .form_container {
-    box-shadow: 0 4vh 4vw -6vh grey;
+    box-shadow: 0 2vh 2vh 0 rgb(201, 201, 201);
     min-height: 230px;
 }
 button {
@@ -130,7 +132,6 @@ button {
     border-radius: 1.5vh;
     background-color: #596d48;
     border: none;
-    box-shadow: 0 2vh 2vw -2vh grey;
     font-size: max(20px, calc(1.2vh + 1.2vw));
     color: white;
     margin: 3vh 0 0 max(17px, 4vw);
