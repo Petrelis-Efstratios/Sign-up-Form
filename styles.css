@@ -73,7 +73,7 @@ h1 {
     flex-direction: column;
     min-height: 100vh;
     width: 65%;
-    padding-left: 35%;
+    margin-left: 35%;
     min-width: 466px;
     z-index: 1;
 }
