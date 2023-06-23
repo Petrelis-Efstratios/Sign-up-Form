@@ -20,7 +20,7 @@
             <div class="right_side">
                 <div class="upper_text">
                     <button class="theme_button">
-                        <img src="images/light_mode.svg">
+                        <img src="images/light_mode.svg" draggable="false">
                     </button>
                     <p>This is not a real online service. It's just a project for creating a form. Clicking Create Acount or Log in won't actually do anything. Feel free to play around with the website.</p>
                     <p>Now that we get that out of the way, let's get started!</p>
@@ -31,27 +31,27 @@
                         <div>
                             <div class="left_column">
                                 <label for="first_name">FIRST NAME</label>
-                                <input type="text" id="first_name">
+                                <input type="text" id="first_name" autocomplete="given-name">
                             </div>
                             <div class="right_column">
                                 <label for="last_name">LAST NAME</label>
-                                <input type="text" id="last_name">
+                                <input type="text" id="last_name" autocomplete="family-name">
                             </div>
                             <div class="left_column">
                                 <label for="email">EMAIL</label>
-                                <input type="email" id="email">
+                                <input type="email" id="email" autocomplete="email">
                             </div>
                             <div class="right_column">
                                 <label for="phone_number">PHONE NUMBER</label>
-                                <input type="text" id="phone_number">
+                                <input type="text" id="phone_number" autocomplete="tel">
                             </div>
                             <div class="left_column">
                                 <label for="password">PASSWORD</label>
-                                <input type="password" id="password">
+                                <input type="password" id="password" autocomplete="off">
                             </div>
                             <div class="right_column">
                                 <label for="confirm_password">CONFIRM PASSWORD</label>
-                                <input type="password" id="confirm_password">
+                                <input type="password" id="confirm_password" autocomplete="off">
                             </div>
                         </div>
                     </form>
