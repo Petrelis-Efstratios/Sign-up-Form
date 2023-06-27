@@ -1,5 +1,9 @@
 const themeIcon = document.querySelector(".theme_button > img");
 const themeButton = document.querySelector(".theme_button");
+const leftSide = document.querySelector(".left_side");
+const upperText = document.querySelector(".upper_text");
+const formContainer = document.querySelector(".form_container");
+const footer = document.querySelector(".right_side > div:last-child");
 let darkModeEnabled = false;
 if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
     darkMode();
@@ -35,3 +39,8 @@ themeButton.addEventListener("click", function() {
             darkMode();
     }
 })
+addEventListener("resize", resize);
+function resize() {
+    leftSide.style.height = `${upperText.clientHeight + formContainer.clientHeight + footer.clientHeight}px`;
+}
+resize();

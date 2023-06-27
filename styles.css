@@ -28,11 +28,9 @@ main {
     width: 35%;
     height: 100%;
     min-height: 300px;
-    position:static;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: fixed;
 }
 .banner {
     width: 100%;
@@ -48,10 +46,12 @@ main {
     object-fit: cover;
     height: 15vmin;
     padding-right: 3%;
+    min-width: 50px;
+    min-height: 69px;
 }
 h1 {
     font-family: 'Norse Bold';
-    font-size: 12vmin;
+    font-size: max(12vmin, 56px);
     margin: 0;
     color: white;
 }
@@ -73,7 +73,6 @@ h1 {
     flex-direction: column;
     min-height: 100vh;
     width: 65%;
-    margin-left: 35%;
     min-width: min-content;
     z-index: 1;
 }
@@ -92,7 +91,7 @@ h1 {
     min-height: 20px;
 }
 .upper_text {
-    min-height: 150px;
+    min-height: 152px;
     background-color: var(--background-color-1);
 }
 .upper_text > p {
@@ -101,7 +100,7 @@ h1 {
     color: var(--text-color);
 }
 .upper_text > p:nth-child(2) {
-    margin: 6.5vh 3vw 4vh 3vw;
+    margin: max(6.5vh, 30px) 3vw 4vh 3vw;
 }
 .upper_text > p:last-child {
     margin: 0 3vw 4vh 3vw;
@@ -121,6 +120,7 @@ label {
     font-size: max(12px, 2.2vh);
     padding-left: 0.3vw;
     color: var(--text-color);
+    white-space: nowrap;
 }
 input {
     appearance: none;
@@ -169,12 +169,12 @@ input:-webkit-autofill:active  {
     border: none;
     font-size: max(20px, calc(1.2vh + 1.2vw));
     color: white;
-    margin: 3vh 0 0 max(17px, 4vw);
+    margin: max(3vh, 15px) 0 0 max(17px, 4vw);
     padding: 0;
 }
 .form_container + div > p {
     font-size: max(14px, 2.7vh);
-    margin: 3vh 0 0 4vw;
+    margin: max(3vh, 8px) 0 0 4vw;
     font-weight: 500;
     color: var(--text-color);
 }
@@ -185,4 +185,7 @@ input:-webkit-autofill:active  {
 .right_side > div:last-child {
     background-color: var(--background-color-1);
     flex: 1 1 auto;
-}   
+}
+.form_container + div {
+    min-height: 150px;
+}
