@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sing-up Form</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&subset=cyrillic">
     </head>
     <body>
         <main>
@@ -30,28 +31,34 @@
                         <legend>Let's do this!</legend>
                         <div>
                             <div class="left_column">
-                                <label for="first_name">FIRST NAME</label>
+                                <label for="first_name">FIRST NAME <em>*</em></label>
                                 <input type="text" id="first_name" autocomplete="given-name">
+                                <div class="error_first_name"></div>
                             </div>
                             <div class="right_column">
                                 <label for="last_name">LAST NAME</label>
                                 <input type="text" id="last_name" autocomplete="family-name">
+                                <div class="error_last_name"></div>
                             </div>
                             <div class="left_column">
                                 <label for="email">EMAIL</label>
                                 <input type="email" id="email" autocomplete="email">
+                                <div class="error_email"></div>
                             </div>
                             <div class="right_column">
                                 <label for="phone_number">PHONE NUMBER</label>
                                 <input type="text" id="phone_number" autocomplete="tel">
+                                <div class="error_phone_number"></div>
                             </div>
                             <div class="left_column">
                                 <label for="password">PASSWORD</label>
                                 <input type="password" id="password" autocomplete="off">
+                                <div class="error_password"></div>
                             </div>
                             <div class="right_column">
                                 <label for="confirm_password">CONFIRM PASSWORD</label>
                                 <input type="password" id="confirm_password" autocomplete="off">
+                                <div class="error_confirm_password"></div>
                             </div>
                         </div>
                     </form>
