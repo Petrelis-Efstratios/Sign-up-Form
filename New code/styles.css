@@ -57,3 +57,40 @@ img {
 .footer > p > a {
     color: white;
 }
+.right-side > div:nth-child(1) {
+    background-color: #f9fafb;
+}
+h1, h2, h3 {
+    margin: 0;
+}
+.right-side > div:nth-child(1) > h2:first-child {
+    padding: 80px 80px 25px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+}
+.right-side > div:nth-child(1) > h2:last-child {
+    padding: 0 20px 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+}
+.right-side > div:nth-child(2) {
+    padding-left: 40px;
+    padding-top: 20px;
+}
+.form-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 260px);
+    grid-template-rows: repeat(3, 70px);
+}
+label {
+    display: block;
+}
+input {
+    border: 1px solid #E5E7EB;
+    border-radius: 2px;
+    outline: none;
+}
+input:focus-within {
+    border: 1px solid #1d4ed8;
+    box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.2);
+}
