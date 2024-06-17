@@ -105,18 +105,24 @@ label {
     font-size: max(2vh, 13px);
 }
 input {
-    border: 1px solid #E5E7EB;
+    border: max(0.2vh, 1px) solid #E5E7EB;
     border-radius: 0.8vh;
     outline: none;
     width: max(41vh, 200px);
     height: max(4.5vh, 25px);
     background-color: #fffefe;
     font-size: max(3vh, 15px);
-    padding: 0.5vh 1vh 0.5vh 1vh;
+    padding: 0.5vh 1vh 0 1vh;
 }
-input:focus-within {
+input:focus {
     border: 1px solid #1d4ed8;
     box-shadow: 1px 2px 5px 2px rgba(0, 0, 0, 0.1);
+}
+input + p {
+    color: #b91c1c;
+    height: 3.2vh;
+    font-size: max(2.3vh, 12px);
+    margin: 0;
 }
 .right-side > div:nth-child(3) {
     background-color: #f9fafb;
