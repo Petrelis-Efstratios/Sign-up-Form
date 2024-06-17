@@ -1,101 +1,42 @@
-const themeIcon = document.querySelector(".theme_button > img");
-const themeButton = document.querySelector(".theme_button");
-const leftSide = document.querySelector(".left_side");
-const upperText = document.querySelector(".upper_text");
-const formContainer = document.querySelector(".form_container");
-const footer = document.querySelector(".right_side > div:last-child");
-const firstName = document.querySelector("#first_name");
-const lastName = document.querySelector("#last_name");
-const email = document.querySelector("#email");
-const phoneNumber = document.querySelector("#phone_number");
-const password = document.querySelector("#password");
-const confirmPassword = document.querySelector("#confirm_password");
+const button = document.querySelector("button");
 const inputs = document.querySelectorAll("input");
-const errorFirstName = document.querySelector(".error_first_name");
-const errorLastName = document.querySelector(".error_last_name");
-const errorEmail = document.querySelector(".error_email");
-const errorPhoneNumber = document.querySelector(".error_phone_number");
-const errorPassword = document.querySelector(".error_password");
-const errorConfirmPassword = document.querySelector(".error_confirm_password");
-const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-let darkModeEnabled = false;
-if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    darkMode();
-}
-function darkMode() {
-    themeIcon.src = "images/dark_mode.svg";
-    document.documentElement.style.cssText = "--text-color-1: white;" +
-    "--text-color-2: red;" +
-    "--background-color-1: #2a040e;" +
-    "--background-color-2: #4d0719;" +
-    "--shadow-1: rgba(180, 180, 180, 0.3);" +
-    "--shadow-2: white;" +
-    "--border-1: black;" +
-    "--border-2: #ced6e9;";
-    darkModeEnabled = true
-}
-function lightMode() {
-    themeIcon.src = "images/light_mode.svg";
-    document.documentElement.style.cssText = "--text-color-1: black;" +
-    "--text-color-2: #da1b2a;" +
-    "--background-color-1 = #f9fafb" +
-    "--background-color-2: white;" +
-    "--shadow-1: rgb(180, 180, 180);" +
-    "--shadow-2: grey;" +
-    "--border-1: #E5E7EB;" +
-    "--border-2: black;";
-    darkModeEnabled = false;
-}
-themeButton.addEventListener("click", function() {
-    switch(darkModeEnabled) {
-        case true:
-            lightMode();
-            break;
-        default:
-            darkMode();
+button.addEventListener("click", function() {
+    const empty = []; 
+    let i = 0;
+    inputs.forEach((e) => {
+        document.querySelector(`#${e.id} + p`).textContent = "";
+        e.style.border = "max(0.2vh, 1px) solid #E5E7EB";
+        if(e.value === "") {
+            empty.push(i);
+        }
+        i++;
+    })
+    for(i in empty) {
+        inputs[empty[i]].style.border = "max(0.2vh, 1px) solid #bc2727";
+        document.querySelector(`#${inputs[empty[i]].id} + p`).textContent = "* Required";
+    }
+    if(inputs[2].value.toLocaleUpperCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) === null) {
+        document.querySelector(`#${inputs[2].id} + p`).textContent = "* Email not valid";
+        inputs[2].style.border = "max(0.2vh, 1px) solid #bc2727";
+    }
+    if(inputs[3].value.match(/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/) === null) {
+        document.querySelector(`#${inputs[3].id} + p`).textContent = "* Phone number not valid";
+        inputs[3].style.border = "max(0.2vh, 1px) solid #bc2727";
+    }
+    if(inputs[4].value !== inputs[5].value && inputs[5].value !== "") {
+        inputs[4].style.border = "max(0.2vh, 1px) solid #bc2727";
+        inputs[5].style.border = "max(0.2vh, 1px) solid #bc2727";
+        document.querySelector(`#${inputs[4].id} + p`).textContent = "* Passwords do not match";
     }
 })
-addEventListener("resize", resize);
-function resize() {
-    leftSide.style.height = `${upperText.clientHeight + formContainer.clientHeight + footer.clientHeight}px`;
-}
-resize();
-inputs.forEach(function(element) {
-    element.addEventListener("focusout", function() {
-        const code = `${this.id}Validation()`;
-        const F = new Function(code);
-        F();
-    })
-}
-);
-inputs.forEach(function(element) {
-    element.addEventListener("input", function() {
-        const code = `${this.id}Validation()`;
-        const F = new Function(code);
-        F();
-    })
-}
-);
-function first_nameValidation() {
-    if(firstName.value === ""){
-    errorFirstName.textContent = "* Required";
+inputs.forEach(input => input.addEventListener("focus", function() {
+    input.style.border = "1px solid #1d4ed8";
+}))
+inputs.forEach(input => input.addEventListener("focusout", function() {
+    if(input.value === "") {
+        input.style.border = "1px solid #b91c1c";
     } else {
-        errorFirstName.textContent = "";
+        input.style.border = "1px solid #E5E7EB";
+        document.querySelector("input + p").textContent = "";
     }
-}
-function last_nameValidation() {
-    if(lastName.value === ""){
-    errorLastName.textContent = "* Required";
-    } else {
-        errorLastName.textContent = "";
-    }
-}
-function emailValidation() {
-    if(email.value === "") {
-        errorEmail.textContent = "* Requird";
-    } else if(!emailRegex.test(email.value)) {
-        errorEmail.textContent = "Email not valid";
-    } else {
-        errorEmail.textContent = "";
-    }
-}
+}))
